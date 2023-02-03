@@ -11,7 +11,7 @@ public class SecondsAndMinutesChallenge {
     public static String getDurationString(int seconds) {
 
         // int minutes = seconds / 60;
-        // int remaindingSeconds = seconds % 60;
+        // int remainingSeconds = seconds % 60;
 
         // validate if >=0
         if (seconds >= 0) {
