@@ -18,14 +18,18 @@ public class LeapYear {
         if (year % 4 == 0) {
             if (year % 100 == 0) {
                 if (year % 400 == 0) {
+                    // year is evenly divisible by 4, 100 and 400
                     return true;
                 } else {
+                    // year is not evenly divisible by 4, 100 and 400
                     return false;
                 }
             } else {
+                // year is evenly divisible by 4 but not 100
                 return true;
             }
         } else {
+            // year is not evenly divisible by 4
             return false;
         }
 
