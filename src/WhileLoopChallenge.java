@@ -1,3 +1,7 @@
+// This challenge creates a method to check if a number is odd or even
+// then we check numbers from 5 to 20 and print the even numbers
+// we break after we've found 5 even numbers and print the total number of odd and even numbers
+
 public class WhileLoopChallenge {
     public static void main(String[] args) {
 
