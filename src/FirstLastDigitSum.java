@@ -23,6 +23,18 @@ public class FirstLastDigitSum {
             return -1;
         }
         int sum = 0;
+        int counter = 0;
+        int firstDigit = number % 10;
+        int currentDigit = 0;
+        int lastDigit = 0;
+
+        while (number > 0) {
+            currentDigit = number % 10;
+            number /= 10;
+            counter++;
+        }
+        lastDigit = currentDigit;
+        sum = firstDigit + lastDigit;
 
         return sum;
     }
