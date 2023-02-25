@@ -6,6 +6,13 @@ public class EvenDigitSum {
         System.out.println(getEvenDigitSum(-22));  // → should return -1 since the number is negative
 
     }
+
+    public static int getEvenDigitSum(int number) {
+
+        int sum = 0;
+
+        return sum;
+    }
 }
 
 //    Write a method named getEvenDigitSum with one parameter of type int called number.
