@@ -19,6 +19,7 @@ public class FirstLastDigitSum {
     }
     public static int sumFirstAndLastDigit(int number) {
 
+        // if number is negative, return -1
         if (number < 0 ) {
             return -1;
         }

@@ -8,9 +8,22 @@ public class EvenDigitSum {
     }
 
     public static int getEvenDigitSum(int number) {
-
+        // if number is negative, return -1
+        if (number < 0 ) {
+            return -1;
+        }
+        // create variable to store the sum
         int sum = 0;
-
+        // loop while number is above 0
+        while (number > 0) {
+            // check if even
+            if (number % 2 == 0) {
+                // use modulus operator to find last digit
+                sum += (number % 10);
+            }
+            // divide by ten to remove last digit
+            number = number / 10;
+        }
         return sum;
     }
 }
