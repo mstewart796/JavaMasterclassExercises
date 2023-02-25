@@ -14,7 +14,7 @@ public class DigitSumChallenge {
         int sum = 0;
         // loop while number is above 0
         while (number > 0) {
-            // use module to find last digit
+            // use modulus operator to find last digit
             sum += (number % 10);
             // divide by ten to remove last digit
             number = number / 10;

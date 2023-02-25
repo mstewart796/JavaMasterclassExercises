@@ -22,20 +22,29 @@ public class FirstLastDigitSum {
         if (number < 0 ) {
             return -1;
         }
-        int sum = 0;
-        int counter = 0;
+
+        // sum does not need to be initialized with a value
+        int sum;
+        // first digit can be found already through the modulus operator
         int firstDigit = number % 10;
+        // create and initialize a variable to track the current digit in a while loop
         int currentDigit = 0;
-        int lastDigit = 0;
+        // create but don't initialize a variable to store the final digit;
+        int lastDigit;
 
+        // while loop that stores the current digit
         while (number > 0) {
+            // modulus operator to find last digit
             currentDigit = number % 10;
+            // reduce size of number to move on to next digit
             number /= 10;
-            counter++;
         }
-        lastDigit = currentDigit;
-        sum = firstDigit + lastDigit;
 
+        // as while loop has ended, the current digit must be the final digit
+        lastDigit = currentDigit;
+        // sum first and last digits
+        sum = firstDigit + lastDigit;
+        // return sum
         return sum;
     }
 
