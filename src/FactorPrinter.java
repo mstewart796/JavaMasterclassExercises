@@ -7,14 +7,20 @@ public class FactorPrinter {
         printFactors(-1);  // → should print "Invalid Value" since number is < 1
     }
 
-    public static int printFactors(int number) {
+    public static void printFactors(int number) {
 
         if (number < 1) {
-            System.out.println("Invalid value");
-            return 1;
+            System.out.println("Invalid Value");
         }
-
-        return 0;
+        // for loop to check every number
+        for (int i = 1; i <= number; i++) {
+            // if divisible then print with a space to help with presentation
+            if (number % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        // added a new line at the end for better presentation
+        System.out.println("");
     }
 }
 //    Write a method named printFactors with one parameter of type int named number.
