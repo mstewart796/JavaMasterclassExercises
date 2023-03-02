@@ -16,10 +16,32 @@ public class SharedDigit {
             return false;
         }
 
+        // store the two digits of the first number in separate variables to compare later
+        int digitOne = numberOne % 10, digitTwo = (numberOne / 10) % 10;
 
-        return true;
+        // create a boolean variable to store outcome
+        boolean checker = true;
+        // while loop to compare
+        while (numberTwo > 0) {
+            // check if either digit of numberOne matches the first then second digit of numberTwo
+            if (numberTwo % 10 == digitOne || numberTwo % 10 == digitTwo) {
+                // return true and reduce size of numberTwo
+                checker = true;
+                numberTwo /= 10;
+            } else {
+                // else return false and reduce size of numberTwo
+                checker = false;
+                numberTwo /= 10;
+            }
+        }
+        // if checker is true return true
+        if (checker) {
+            return true;
+        } else {
+            // else return false
+            return false;
+        }
     }
-
 }
 
 //    Write a method named hasSharedDigit with two parameters of type int.
