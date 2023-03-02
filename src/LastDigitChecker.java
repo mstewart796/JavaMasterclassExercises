@@ -1,14 +1,14 @@
 public class LastDigitChecker {
     public static void main(String[] args) {
-        System.out.println(hasSameLastDigit (41, 22, 71));  // → should return true since 1 is the rightmost
-        // digit in numbers 41 and 71
-        System.out.println(hasSameLastDigit (23, 32, 42));  // → should return true since 2 is the rightmost digit in
-        // numbers 32 and 42
-        System.out.println(hasSameLastDigit (9, 99, 999));  // → should return false since 9 is not within the range
-        // of 10-1000
+        System.out.println(hasSameLastDigit (41, 22, 71));  // → should return true
+        // since 1 is the rightmost digit in numbers 41 and 71
+        System.out.println(hasSameLastDigit (23, 32, 42));  // → should return true
+        // since 2 is the rightmost digit in numbers 32 and 42
+        System.out.println(hasSameLastDigit (9, 99, 999));  // → should return false
+        // since 9 is not within the range of 10-1000
     }
 
-    public static boolean hasSameLastDigit(int numberOne, int numberTwo) {
+    public static boolean hasSameLastDigit(int numberOne, int numberTwo, int numberThree) {
 
         // check that both numbers are between 10 and 99 (inclusive) else return false
         if (numberOne < 10 || numberTwo < 10 || numberOne > 99 || numberTwo > 99) {
