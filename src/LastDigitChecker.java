@@ -6,16 +6,36 @@ public class LastDigitChecker {
         // since 2 is the rightmost digit in numbers 32 and 42
         System.out.println(hasSameLastDigit (9, 99, 999));  // → should return false
         // since 9 is not within the range of 10-1000
+
+        System.out.println(isValid(10));  // → should return true since 10 is within the range of 10-1000
+        System.out.println(isValid(468));  // → should return true since 468 is within the range of 10-1000
+        System.out.println(isValid(1051));  // → should return false since 1051 is not within the range of
+        // 10-1000
     }
 
     public static boolean hasSameLastDigit(int numberOne, int numberTwo, int numberThree) {
 
-        // check that both numbers are between 10 and 99 (inclusive) else return false
-        if (numberOne < 10 || numberTwo < 10 || numberOne > 99 || numberTwo > 99) {
+        // check if the three numbers are valid
+        if (isValid(numberOne) == false || isValid(numberTwo) == false || isValid(numberThree) == false)
+        {
             return false;
         }
-
-        return true;
+        // create a variable to store the final digit of each number;
+        int lastDigitOne = numberOne % 10, lastDigitTwo = numberTwo % 10, lastDigitThree = numberThree % 10;
+        // if to check if at least two numbers match
+        if (lastDigitOne == lastDigitTwo || lastDigitOne == lastDigitThree || lastDigitTwo == lastDigitThree) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static boolean isValid(int number) {
+        // check that both numbers are between 10 and 1000 (inclusive) else return false
+        if (number < 10 || number > 1000) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
 
