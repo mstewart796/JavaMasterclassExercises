@@ -1,20 +1,46 @@
 public class GreatestCommonDivisor {
     public static void main(String[] args) {
 
-        getGreatestCommonDivisor(25, 15);  // should return 5 since both can be divided by 5 without a remainder
-        getGreatestCommonDivisor(12, 30);  // should return 6 since both can be divided by 6 without a remainder
-        getGreatestCommonDivisor(9, 18);  // should return -1 since the first parameter is < 10
-        getGreatestCommonDivisor(81, 153);  // should return 9 since both can be divided by 9 without a remainder
-
+        System.out.println(getGreatestCommonDivisor(25, 15));  // should return 5 since both can be divided by 5
+        System.out.println(getGreatestCommonDivisor(12, 30));  // should return 6 since both can be divided by 6
+        System.out.println(getGreatestCommonDivisor(9, 18));  // should return -1 since the first parameter is < 10
+        System.out.println(getGreatestCommonDivisor(81, 153));  // should return 9 since both can be divided by 9
     }
 
     public static int getGreatestCommonDivisor(int first, int second) {
 
+        // check if less than 10
         if (first < 10 || second < 10) {
             return -1;
         }
+        // create variables to store the divisors for first and second numbers as well as the biggest
+        // also create a variable to store the smallest of first and second
+        int divisorFirst = 1, divisorSecond = 1, smallerNumber, biggestDivisor = 1;
 
-        return 0;
+        // if to check which is smaller, first or second
+        if (first > second) {
+            smallerNumber = second;
+        } else {
+            smallerNumber = first;
+        }
+
+        // for loop that goes as high as the smallest number
+        for (int i = 1; i <= smallerNumber; i++) {
+            // checks if the first number is divisible by i
+            if ((first % i) == 0) {
+                divisorFirst =  i;
+            }
+            // checks if the second number is divisible by i
+            if ((second % i) == 0) {
+                divisorSecond = i;
+            }
+            // if first and second are equal, change value of biggestDivisor
+            if (divisorFirst == divisorSecond) {
+                biggestDivisor = divisorFirst;
+            }
+
+        }
+        return biggestDivisor;
     }
 }
 
