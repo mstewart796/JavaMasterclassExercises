@@ -2,6 +2,8 @@ public class NumberToWords {
     public static void main(String[] args) {
 
         numberToWords(10);
+        numberToWords(234);
+        System.out.println(reversed(234));
 
     }
     public static void numberToWords(int number) {
@@ -9,6 +11,7 @@ public class NumberToWords {
         if (number < 0 ){
             System.out.println("Invalid Value");
         }
+        number = reversed(number);
 
         while (number > 0) {
             if (number % 10 == 0){
@@ -37,6 +40,18 @@ public class NumberToWords {
 
     }
     public static int reversed(int number) {
+
+        int reversed = 0;
+        while (number > 0) {
+            reversed *= 10;
+            reversed += number % 10;
+            number /= 10;
+        }
+
+        return reversed;
+    }
+
+    public static int getDigitCount(int number) {
 
     }
 }
