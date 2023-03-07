@@ -1,9 +1,12 @@
 public class NumberToWords {
     public static void main(String[] args) {
 
-        numberToWords(10);
-        numberToWords(234);
-        System.out.println(reversed(234));
+        numberToWords(0);
+        //        numberToWords(100);
+//        numberToWords(234);
+//        System.out.println(reversed(234));
+//        System.out.println(getDigitCount(10));
+        System.out.print(reverse(-2));
 
     }
     public static void numberToWords(int number) {
@@ -11,48 +14,70 @@ public class NumberToWords {
         if (number < 0 ){
             System.out.println("Invalid Value");
         }
-        number = reversed(number);
+        if (number == 0) {
+            System.out.print("Zero ");
+        }
+        int reversedNumber = reverse(number);
+        int difference = getDigitCount(number) - getDigitCount(reversedNumber);
 
-        while (number > 0) {
-            if (number % 10 == 0){
+
+        while (reversedNumber > 0) {
+            if (reversedNumber % 10 == 0){
                 System.out.print("Zero ");
-            } else if (number % 10 == 1) {
+            } else if (reversedNumber % 10 == 1) {
                 System.out.print("One ");
-            } else if (number % 10 == 2) {
+            } else if (reversedNumber % 10 == 2) {
                 System.out.print("Two ");
-            } else if (number % 10 == 3) {
+            } else if (reversedNumber % 10 == 3) {
                 System.out.print("Three ");
-            } else if (number % 10 == 4) {
+            } else if (reversedNumber % 10 == 4) {
                 System.out.print("Four ");
-            } else if (number % 10 == 5) {
+            } else if (reversedNumber % 10 == 5) {
                 System.out.print("Five ");
-            } else if (number % 10 == 6) {
+            } else if (reversedNumber % 10 == 6) {
                 System.out.print("Six ");
-            } else if (number % 10 == 7) {
+            } else if (reversedNumber % 10 == 7) {
                 System.out.print("Seven ");
-            } else if (number % 10 == 8) {
+            } else if (reversedNumber % 10 == 8) {
                 System.out.print("Eight ");
-            } else if (number % 10 == 9) {
+            } else if (reversedNumber % 10 == 9) {
                 System.out.print("Nine ");
             }
-            number /= 10;
+            reversedNumber /= 10;
         }
+
+        while (difference > 0) {
+            System.out.print("Zero ");
+            difference--;
+        }
+
+
 
     }
-    public static int reversed(int number) {
+    public static int reverse(int number) {
 
-        int reversed = 0;
-        while (number > 0) {
-            reversed *= 10;
-            reversed += number % 10;
+        int reverse = 0;
+        while (number != 0) {
+            reverse *= 10;
+            reverse += number % 10;
             number /= 10;
         }
-
-        return reversed;
+        return reverse;
     }
 
     public static int getDigitCount(int number) {
-
+        if (number < 0) {
+            return -1;
+        }
+        if (number == 0) {
+            return 1;
+        }
+        int counter = 0;
+        while (number > 0) {
+            number /= 10;
+            counter++;
+        }
+        return counter;
     }
 }
 
