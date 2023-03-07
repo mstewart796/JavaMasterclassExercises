@@ -1,8 +1,42 @@
 public class NumberToWords {
     public static void main(String[] args) {
 
+        numberToWords(10);
+
     }
     public static void numberToWords(int number) {
+
+        if (number < 0 ){
+            System.out.println("Invalid Value");
+        }
+
+        while (number > 0) {
+            if (number % 10 == 0){
+                System.out.print("Zero ");
+            } else if (number % 10 == 1) {
+                System.out.print("One ");
+            } else if (number % 10 == 2) {
+                System.out.print("Two ");
+            } else if (number % 10 == 3) {
+                System.out.print("Three ");
+            } else if (number % 10 == 4) {
+                System.out.print("Four ");
+            } else if (number % 10 == 5) {
+                System.out.print("Five ");
+            } else if (number % 10 == 6) {
+                System.out.print("Six ");
+            } else if (number % 10 == 7) {
+                System.out.print("Seven ");
+            } else if (number % 10 == 8) {
+                System.out.print("Eight ");
+            } else if (number % 10 == 9) {
+                System.out.print("Nine ");
+            }
+            number /= 10;
+        }
+
+    }
+    public static int reversed(int number) {
 
     }
 }
