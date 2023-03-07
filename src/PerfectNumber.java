@@ -11,7 +11,27 @@ public class PerfectNumber {
     }
     public static boolean isPerfectNumber(int number) {
 
-        return true;
+        // check if number is less than 1
+        if (number < 1) {
+            return false;
+        }
+
+        // create a variable to store the sum
+        int sum = 0;
+        // use a for loop that doesn't include the number itself
+        for (int i = 1; i < number; i++) {
+            // if i is a proper divisor, add it to sum
+            if (number % i == 0) {
+               sum += i;
+            }
+        }
+
+        // if sum is equal to number return true, else return false
+        if (sum == number) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
