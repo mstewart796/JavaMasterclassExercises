@@ -14,10 +14,21 @@ public class LargestPrime {
     public static int getLargestPrime(int number) {
 
         // check if negative or not prime
-        if (number < 0 || number % 2 == 0) {
+        if (number < 2) {
             return -1;
         }
-        return 0;
+
+        // for loop to go through all possibilities
+        for (int i = 2; i < number / 2; i++) {
+            // check if number divided by i leaves a remainder
+            if (number % i == 0) {
+                // is so divide by this number
+                number /= i;
+                // reset increment
+                i--;
+            }
+        }
+        return number;
     }
 }
 
