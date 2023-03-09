@@ -13,6 +13,7 @@ public class LargestPrime {
 
     public static int getLargestPrime(int number) {
 
+        // check if negative or not prime
         if (number < 0 || number % 2 == 0) {
             return -1;
         }
