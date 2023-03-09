@@ -12,6 +12,11 @@ public class FlourPacker {
         System.out.println(canPack (-3, 2, 12));  // should return false since bigCount is negative.
 
     }
+
+    public static boolean canPack(int bigCount, int smallCount, int goal) {
+
+        return true;
+    }
 }
 
 //    Write a method named canPack with three parameters of type int named bigCount, smallCount, and goal.
