@@ -19,7 +19,8 @@ public class LargestPrime {
         }
 
         // for loop to go through all possibilities
-        for (int i = 2; i < number / 2; i++) {
+        // i tried with  i = number / 2 but this failed the check for 4 on udemy
+        for (int i = 2; i < number; i++) {
             // check if number divided by i leaves a remainder
             if (number % i == 0) {
                 // is so divide by this number
@@ -31,6 +32,8 @@ public class LargestPrime {
         return number;
     }
 }
+
+
 
 //    Write a method named getLargestPrime with one parameter of type int named number.
 //
@@ -60,3 +63,17 @@ public class LargestPrime {
 //        far in the course.
 //
 //        NOTE: Do not add a main method to the solution code.
+
+
+// ideal solution:
+//    public static int getLargestPrime(int number) {
+//        if (number < 2) return -1;
+//        for (int i = 2; i < number; i++) { // can optimize with i <= number/2;
+//            if (number % i == 0){
+//                number /= i;
+//                i--; // neutralize the i++ increment to check i again
+//            }
+//        }
+//        return number;
+//    }
+//}
