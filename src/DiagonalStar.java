@@ -11,8 +11,41 @@ public class DiagonalStar {
         if (number < 5) {
             System.out.println("Invalid Value");
         } else {
-            System.out.println("*");
+            for (int i = 0; i < number; i++) {
+            for (int j = 0; j < number; j++) {
+                //        * In the first or last row
+                if (i == 0 || i == number - 1) {
+                    System.out.print("*");
+                }
+                //        * In the first or last column
+                else if (j == 0 || j == number - 1) {
+                    System.out.print("*");
+                }
+                //        * When the row number equals the column number
+                else if ( i == j) {
+                    System.out.print("*");
+                }
+                //        * When the column number equals rowCount - currentRow + 1 (where currentRow is current
+                //        row number)
+                else if (j == number - i - 1) {
+                    System.out.print("*");
+                } else {
+                // if not start then print space
+                    System.out.print(" ");
+                }
+            }
+            // print new line
+            System.out.println();
         }
+        }
+
+
+//
+
+//
+
+//
+
     }
 }
 //    Write a method named printSquareStar with one parameter of type int named number.
