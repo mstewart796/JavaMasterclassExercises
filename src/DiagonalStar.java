@@ -1,13 +1,18 @@
 public class DiagonalStar {
     public static void main(String[] args) {
 
+        printSquareStar(4);
         printSquareStar(5);
 
     }
 
     public static void printSquareStar(int number) {
 
-        System.out.println("*");
+        if (number < 5) {
+            System.out.println("Invalid Value");
+        } else {
+            System.out.println("*");
+        }
     }
 }
 //    Write a method named printSquareStar with one parameter of type int named number.
