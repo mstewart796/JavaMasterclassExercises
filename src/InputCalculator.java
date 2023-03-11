@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class InputCalculator {
     public static void main(String[] args) {
 
+        // call method to start
         inputThenPrintSumAndAverage();
 //        tests on how Math.round work
 //        long test =  Math.round(3.8);
