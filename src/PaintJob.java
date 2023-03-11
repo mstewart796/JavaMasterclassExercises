@@ -1,25 +1,26 @@
 public class PaintJob {
     public static void main(String[] args) {
+        // Tests
 
         // First method
-//        System.out.println(getBucketCount(-3.4, 2.1, 1.5, 2));  // → should
-//        // return -1 since the width parameter is invalid
-//        System.out.println(getBucketCount(3.4, 2.1, 1.5, 2));  // → should return 3
-//        // since the wall area is 7.14, a single bucket can cover an area of 1.5 and Bob has 2 extra buckets home.
-//        System.out.println(getBucketCount(2.75, 3.25, 2.5, 1));   // → should
-//        // return 3 since the wall area is 8.9375, a single bucket can cover an area of 2.5 and Bob has 1
-//        // extra bucket at home.
+        System.out.println(getBucketCount(-3.4, 2.1, 1.5, 2));  // → should
+        // return -1 since the width parameter is invalid
+        System.out.println(getBucketCount(3.4, 2.1, 1.5, 2));  // → should return 3
+        // since the wall area is 7.14, a single bucket can cover an area of 1.5 and Bob has 2 extra buckets home.
+        System.out.println(getBucketCount(2.75, 3.25, 2.5, 1));   // → should
+        // return 3 since the wall area is 8.9375, a single bucket can cover an area of 2.5 and Bob has 1
+        // extra bucket at home.
 
 
 
         // First overloaded method
 
-//        System.out.println(getBucketCount(-3.4, 2.1, 1.5));  // → should return -1 since
-//        // the width parameter is invalid
-//        System.out.println(getBucketCount(3.4, 2.1, 1.5));   // → should return 5 since the
-//        // wall area is 7.14, and a single bucket can cover an area of 1.5.
-//        System.out.println(getBucketCount(7.25, 4.3, 2.35));  // → should return 14 since
-//        // the wall area is 31.175, and a single bucket can cover an area of 2.35.
+        System.out.println(getBucketCount(-3.4, 2.1, 1.5));  // → should return -1 since
+        // the width parameter is invalid
+        System.out.println(getBucketCount(3.4, 2.1, 1.5));   // → should return 5 since the
+        // wall area is 7.14, and a single bucket can cover an area of 1.5.
+        System.out.println(getBucketCount(7.25, 4.3, 2.35));  // → should return 14 since
+        // the wall area is 31.175, and a single bucket can cover an area of 2.35.
 
         // Second overloaded method
         System.out.println(getBucketCount(3.4, 1.5));  // → should return 3 since the area is 3.4
@@ -35,8 +36,9 @@ public class PaintJob {
         if (width <= 0 || height <= 0 || areaPerBucket <= 0 || extraBuckets < 0) {
             return -1;
         }
-
+        // create a variable that will store the answer
         double answer = ((width * height) / areaPerBucket) - extraBuckets;
+        // we must cast the answer to int - using Math.Ceil as we have to round up
         return (int) Math.ceil(answer);
     }
     public static int getBucketCount(double width, double height, double areaPerBucket) {
@@ -45,7 +47,9 @@ public class PaintJob {
         if (width <= 0 || height <= 0 || areaPerBucket <= 0) {
             return -1;
         }
+        // create a variable that will store the answer
         double answer = (( width * height) / areaPerBucket);
+        // we must cast the answer to int - using Math.Ceil as we have to round up
         return (int) Math.ceil(answer);
     }
     public static int getBucketCount(double area, double areaPerBucket) {
@@ -53,8 +57,9 @@ public class PaintJob {
         if (area <= 0 || areaPerBucket <= 0) {
             return -1;
         }
-
+        // create a variable that will store the answer
         double answer = area / areaPerBucket;
+        // we must cast the answer to int - using Math.Ceil as we have to round up
         return (int) Math.ceil(answer);
     }
 }
