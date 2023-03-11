@@ -12,7 +12,7 @@ public class InputCalculator {
         // create variables for the number, sum and counter
         int newNumber, sum = 0, counter = 0;
         // Math.round is a long
-        long average;
+        long average = 0;
 
         do {
             // request input
@@ -30,7 +30,8 @@ public class InputCalculator {
                 // work out average
                 average = Math.round(sum / counter);
             } catch (NumberFormatException nfe) {
-                // otherwise break from loop
+                // otherwise print sum / avg and break from loop
+                System.out.println("SUM = " + sum + " AVG = " + average);
                 break;
             }
         } while (true);
