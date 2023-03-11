@@ -3,21 +3,34 @@ import java.util.Scanner;
 public class InputCalculator {
     public static void main(String[] args) {
 
+        inputThenPrintSumAndAverage();
+
     }
     public static void inputThenPrintSumAndAverage() {
+        // create scanner to gather input
         Scanner scanner = new Scanner(System.in);
+        // create variables for the number, sum and counter
         int newNumber, sum = 0, counter = 0;
+        // Math.round is a long
         long average;
 
         do {
+            // request input
             System.out.println("Enter a whole number (or anything else to quit): ");
+            // take input
             String stringNumber = scanner.nextLine();
+            // check if it is a valid int
             try {
+                // cast string inputted (stringNumber) to int variable newNumber
                 newNumber = Integer.parseInt(stringNumber);
+                // add it to sum
                 sum += newNumber;
+                // increase counter
                 counter++;
+                // work out average
                 average = Math.round(sum / counter);
             } catch (NumberFormatException nfe) {
+                // otherwise break from loop
                 break;
             }
         } while (true);
