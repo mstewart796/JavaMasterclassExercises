@@ -21,7 +21,13 @@ public class PaintJob {
 //        System.out.println(getBucketCount(7.25, 4.3, 2.35));  // → should return 14 since
 //        // the wall area is 31.175, and a single bucket can cover an area of 2.35.
 
-
+        // Second overloaded method
+        System.out.println(getBucketCount(3.4, 1.5));  // → should return 3 since the area is 3.4
+        // and a single bucket can cover an area of 1.5
+        System.out.println(getBucketCount(6.26, 2.2));  // → should return 3 since the wall area
+        // is 6.26 and a single bucket can cover an area of 2.2.
+        System.out.println(getBucketCount(3.26, 0.75));  // → should return 5 since the wall area
+        // is 3.26, and a single bucket can cover an area of 0.75 .
     }
     public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets) {
 //        If one of the parameters width, height or areaPerBucket is less or equal to 0 or if extraBuckets
@@ -42,24 +48,14 @@ public class PaintJob {
         double answer = (( width * height) / areaPerBucket);
         return (int) Math.ceil(answer);
     }
-    //        3. In some cases, Bob does not know the width and height of the wall but he knows the area of a wall.
-//        He needs you to write another method.
-//
-//        Write another overloaded method named getBucketCount with 2 parameters namely, area and areaPerBucket
-//        (both of type double).
-//
-//        The method needs to return a value of type int that represents the number of buckets that Bob needs
-//        to buy before going to work. To calculate the bucket count, refer to the notes below.
-//
-//        If one of the parameters area or areaPerBucket is less or equal to 0, the method needs to
-//        return -1 to indicate an invalid value.
-//
-//        If all parameters are valid, the method needs to calculate the number of buckets and return it.
     public static int getBucketCount(double area, double areaPerBucket) {
 
-        if (area <= 0 || areaPerBucket < 0) {
+        if (area <= 0 || areaPerBucket <= 0) {
             return -1;
         }
+
+        double answer = area / areaPerBucket;
+        return (int) Math.ceil(answer);
     }
 }
 //    Bob is a wall painter and he needs your help. You have to write a program that helps Bob calculate
