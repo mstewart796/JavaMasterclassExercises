@@ -1,8 +1,20 @@
 public class PaintJob {
     public static void main(String[] args) {
 
-        System.out.println(getBucketCount(-3.4, 2.1, 1.5, 2));  // → should
+        // System.out.println(getBucketCount(-3.4, 2.1, 1.5, 2));  // → should
         // return -1 since the width parameter is invalid
+
+
+
+        // Second overloaded method
+
+//        System.out.println(getBucketCount(-3.4, 2.1, 1.5));  // → should return -1 since
+//        // the width parameter is invalid
+//        System.out.println(getBucketCount(3.4, 2.1, 1.5));   // → should return 5 since the
+//        // wall area is 7.14, and a single bucket can cover an area of 1.5.
+//        System.out.println(getBucketCount(7.25, 4.3, 2.35));  // → should return 14 since
+//        // the wall area is 31.175, and a single bucket can cover an area of 2.35.
+
 
     }
     public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets) {
@@ -19,8 +31,8 @@ public class PaintJob {
         if (width <= 0 || height <= 0 || areaPerBucket <= 0) {
             return -1;
         }
-
-        return 0;
+        double answer = (( width * height) / areaPerBucket);
+        return (int) Math.ceil(answer);
     }
 }
 //    Bob is a wall painter and he needs your help. You have to write a program that helps Bob calculate
