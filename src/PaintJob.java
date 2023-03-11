@@ -1,13 +1,25 @@
 public class PaintJob {
     public static void main(String[] args) {
 
+        System.out.println(getBucketCount(-3.4, 2.1, 1.5, 2));  // → should
+        // return -1 since the width parameter is invalid
+
     }
     public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets) {
 //        If one of the parameters width, height or areaPerBucket is less or equal to 0 or if extraBuckets
 //        is less than 0, the method needs to return -1 to indicate an invalid value.
-        if (width <= 0 || height <= 0 || areaPerBucket <= 0 || extraBuckets <0) {
+        if (width <= 0 || height <= 0 || areaPerBucket <= 0 || extraBuckets < 0) {
             return -1;
         }
+        return 0;
+    }
+    public static int getBucketCount(double width, double height, double areaPerBucket) {
+        //        If one of the parameters width, height or areaPerBucket is less or equal to 0, the method needs to
+//        return -1 to indicate an invalid value
+        if (width <= 0 || height <= 0 || areaPerBucket <= 0) {
+            return -1;
+        }
+
         return 0;
     }
 }
