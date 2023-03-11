@@ -1,16 +1,35 @@
+import java.util.Scanner;
+
 public class InputCalculator {
     public static void main(String[] args) {
 
     }
     public static void inputThenPrintSumAndAverage() {
+        Scanner scanner = new Scanner(System.in);
+        int newNumber, sum = 0, counter = 0;
+        long average;
 
+        do {
+            System.out.println("Enter a whole number (or anything else to quit): ");
+            String stringNumber = scanner.nextLine();
+            try {
+                newNumber = Integer.parseInt(stringNumber);
+                sum += newNumber;
+                counter++;
+                average = Math.round(sum / counter);
+            } catch (NumberFormatException nfe) {
+                break;
+            }
+        } while (true);
     }
 }
 //    Write a method called inputThenPrintSumAndAverage that does not have any parameters.
 //
-//        The method should not return anything (void) and it needs to keep reading int numbers from the keyboard.
+//        The method should not return anything (void) and it needs to keep reading int numbers
+//        from the keyboard.
 //
-//        When the user enters something that is not an int then it needs to print a message in the format
+//        When the user enters something that is not an int then it needs to print a message in
+//        the format
 //        "SUM = XX AVG = YY".
 //
 //        XX represents the sum of all entered numbers of type int.
@@ -49,7 +68,8 @@ public class InputCalculator {
 //
 //        TIP: Use casting when calling the round method since it needs double as a parameter.
 //
-//        NOTE: Use the method Math.round to round the calculated average (double). The method round returns long.
+//        NOTE: Use the method Math.round to round the calculated average (double). The method
+//        round returns long.
 //
 //        NOTE: Be mindful of spaces in the printed message.
 //
